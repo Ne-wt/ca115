@@ -1,0 +1,176 @@
+/****************************************************************
+*   LAYOUTS
+****************************************************************/
+
+:root {
+    --dark: #0d0b16;
+    --dark-transparent: #0d0b16b6;
+    --highlight: #996536;
+    --white: #f5f3ea;
+
+    --gradient: linear-gradient(180deg, rgba(50,38,34,1) 0%, rgba(45,34,33,1) 27%, rgba(34,34,40,1) 67%, rgba(38,43,49,1) 100%);
+    --gradient-transparent: linear-gradient(180deg, rgba(167,123,74,.25) 0%, rgba(165,104,56,.25) 27%, rgba(93,104,105,.25) 67%, rgba(119,145,135,.25) 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FONT DEFINITIONS*/
+
+h1, h2, h3, h4, h5,
+.h1, .h2, .h3, .h4, .h5 {
+    text-transform: uppercase;
+    font-family: 'Libre Baskerville', serif; 
+    font-weight: bold;
+}
+
+body {
+    background-color: transparent;
+    font-family: Lato, sans-serif; 
+    min-height: 100vh;
+    font-size: 80%;
+}
+
+/******************/
+
+#app {
+    height: 100vh;
+    background-color: var(--dark);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    background-color: var(--dark-transparent);
+    border-bottom: 1px solid var(--highlight);
+    border-radius: 0;
+    margin-bottom: 0;
+    padding: .5rem 1rem;
+    z-index: 1030;
+    /* make navbar items in a row */
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar a {
+    color: var(--highlight);
+    text-decoration: none;
+    padding: .5rem 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    display: block;
+    padding: .32rem .32rem
+}
+
+.nav-link:focus,
+.nav-link:hover {
+    text-decoration: none
+}
+
+.nav-item {
+    flex: 1 1 auto;
+    text-align: center
+}
+
+.nav-item {
+    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center
+}
+
+.navbar-brand {
+    display: inline-block;
+    padding-top: .32rem;
+    padding-bottom: .32rem;
+    margin-right: 1rem;
+    font-size: 1.125rem;
+    line-height: inherit;
+    white-space: nowrap
+}
+
+.navbar-brand:focus,
+.navbar-brand:hover {
+    text-decoration: none
+}
+
+/****************************************************************
+*   MAIN CONTENT
+****************************************************************/
+
+.stars {
+    height: 100%;
+    background: url('./images/stars.png') repeat top center;
+    z-index: 0;
+}
+
+.main-content {
+    height: 90vh;
+    flex: 1 1 auto;
+    padding: 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: var(--dark);
+    background: var(--gradient-transparent);
+    margin-left: 10vw;
+    margin-right: 10vw;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 1rem 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+.twinkling {
+    height: 100%;
+    background: transparent url('./images/twinkling.png') repeat top center;
+    z-index: 1;
+
+    -moz-animation: move-twink-back 200s linear infinite;
+    -ms-animation: move-twink-back 200s linear infinite;
+    -o-animation: move-twink-back 200s linear infinite;
+    -webkit-animation: move-twink-back 200s linear infinite;
+    animation: move-twink-back 200s linear infinite;
+}
