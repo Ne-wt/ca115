@@ -6,8 +6,12 @@
         <title>LYFE</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.png">
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <!-- Particle JS -->
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
         <!-- Font Defs -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,74 +21,262 @@
     </head>
     <body>
         <div id="app">
-            <div class="stars">
-            <div class="twinkling">
-                <!--[if lt IE 7]>
-                    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-                <![endif]-->
-                <!-- Navbar -->
-                <nav class="navbar">
-                    <div class="navbar-brand">
-                        <h2>LYFE</h2>
-                    </div>
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="contact">Contact</a>
-                        </li>
-                    </ul>
-                </nav>
-                <!-- Main Content -->
-                <div class="main-content text-center">
-                    <h1>Welcome to LYFE</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Donec euismod, nisl eu aliquam consectetur, nisl nunc
-                        consectetur nisi, euismod aliquam nisl nunc euismod
-                        nisi.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Donec euismod, nisl eu aliquam consectetur, nisl nunc
-                        consectetur nisi, euismod aliquam nisl nunc euismod
-                        nisi.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Donec euismod, nisl eu aliquam consectetur, nisl nunc
-                        consectetur nisi, euismod aliquam nisl nunc euismod
-                        nisi.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Donec euismod, nisl eu aliquam consectetur, nisl nunc
-                        consectetur nisi, euismod aliquam nisl nunc euismod
-                        nisi.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Donec euismod, nisl eu aliquam consectetur, nisl nunc
-                        consectetur nisi, euismod aliquam nisl nunc euismod
-                        nisi.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Donec euismod, nisl eu aliquam consectetur, n
+            <!-- Navbar -->
+            <nav class="navbar">
+                <div class="navbar-brand">
+                    <h2>LYFE</h2>
                 </div>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" id="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <!--[if lt IE 7]>
+                <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+            <![endif]-->
+
+            <!-- Main Content -->
+            <div class="main-content text-center" id="home-tab">
+                <h1>Welcome to LYFE</h1>
+                <hr class="mt-2" style="width: 50%; margin-left: auto; margin-right: auto; opacity: .5;" />
+                <p class="mt-2">
+                    LYFE is an innovational product for the people who want to live a more sustainable, care-free, and easy lifestyle.
+                </p>
+                <div class="text-center">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea ullam, impedit sequi totam, ad iure quas enim animi, blanditiis eius modi dignissimos itaque et? Suscipit delectus repudiandae ex quibusdam mollitia!</p>
+
+                    <img class="band-img my-2" src="./images/band.PNG" alt="LYFE band" />
+                    
+                    <p>
+                        Our product is an alternative solution to the outdated method of keeping physical copies of important documents such as passports, birth certificates, vaccine certs, and other sensitive information that end users avail of often.
+                        <br>It isn’t convenient to carry around physical certificates in this modern age of technology, and even less so when such a document is misplaced, lost, needs reprinting, or becomes outdated. 
+                        <br><br>
+                        LYFE Band is the simple solution to all problems associated with paper records. 
+                        <br>
+                        LYFE Band is a small, comfortable and convenient wristband that includes an individual's custom added personal information.
+                        <br><br>You control what LYFE Band knows. 
+                    </p>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec euismod, nisl eu aliquam consectetur, nisl nunc
+                    consectetur nisi, euismod aliquam nisl nunc euismod
+                    nisi.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec euismod, nisl eu aliquam consectetur, nisl nunc
+                    consectetur nisi, euismod aliquam nisl nunc euismod
+                    nisi.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec euismod, nisl eu aliquam consectetur, nisl nunc
+                    consectetur nisi, euismod aliquam nisl nunc euismod
+                    nisi.
+                </p>
             </div>
+            <!-- About -->
+            <div class="main-content text-center hide" id="about-tab">
+                <h1>About LYFE</h1>
+                <hr class="mt-2" style="width: 50%; margin-left: auto; margin-right: auto; opacity: .5;" />
+                <p class="mt-2">
+                    LYFE is an innovational product for the people who want to live a more sustainable, care-free, and easy lifestyle.
+                </p>
+            </div>
+            <!-- Contact -->
+            <div class="main-content text-center hide" id="contact-tab">
+                <h1>Contact</h1>
+                <hr class="mt-2" style="width: 50%; margin-left: auto; margin-right: auto; opacity: .5;" />
+                <p class="mt-2">
+                    <div id="contact-form">
+                        <input type="text" class="form-control" placeholder="Name">
+                        <br>
+                        <input type="text" class="form-control" placeholder="Email">
+                        <br>
+                        <input type="text" class="form-control" placeholder="Subject">
+                        <br>
+                        <textarea class="form-control" placeholder="Message" rows="8" cols="50"></textarea>
+                        <br>
+                        <button class="mt-2 btn" id="send">Send</button>
+                    </div>
+                    <div id="thanks" class="hide">
+                        <h2 class="text-center">Thank you for your message!</h2>
+                        <p class="text-center">We will get back to you as soon as possible!</p>
+                        <br>
+                        <button class="btn" id="another">Send Another?</button>
+                    </div>
+                </p>
             </div>    
         </div>    
         <script>
-            $(document).ready(function(){
-                $("#contact").click(function(){
-                    alert("Contact us at:");
+            $(document).ready(function() {
+                $("#home").click(function(){
+                    $("#about-tab").fadeOut();
+                    $("#contact-tab").fadeOut();
+                    
+                    setTimeout(function() {
+                        $("#home-tab").fadeIn();
+                    }, 500);
+                });
+                $("#about").click(function(){
+                    $("#home-tab").fadeOut();
+                    $("#contact-tab").fadeOut();
+
+                    setTimeout(function() {
+                        $("#about-tab").fadeIn();
+                    }, 500);
+                });
+                $("#contact").click(function() {
+                    $("#home-tab").fadeOut();
+                    $("#about-tab").fadeOut();
+                    // wait for fade out to finish
+                    setTimeout(function() {
+                        $("#contact-tab").fadeIn();
+                    }, 500);
+                });
+
+                $('#send').click(function() {
+                    // if name and message are filled out
+                    if($('#contact-form input[type="text"]').val() && $('#contact-form textarea').val()) {
+                        $('#contact-form').fadeOut(200);
+                        // wait for fade out to finish
+                        setTimeout(function() {
+                            $('#thanks').fadeIn();
+                        }, 200);
+                    }
+                    else {
+                        alert('Please fill out the form!');
+                    }
+                });
+
+                $('#another').click(function() {
+                    // clear form
+                    $('#contact-form input[type="text"]').val('');
+                    $('#contact-form textarea').val('');
+                    $('#thanks').fadeOut();
+                    $('#contact-form').fadeIn();
                 });
             });
+
+            /* Referenced: https://codepen.io/bob6664569/pen/rOzmve */
+            particlesJS("app", {
+                "particles": {
+                    "number": {
+                        "value": 355,
+                        "density": {
+                            "enable": true,
+                            "value_area": 789.1476416322727
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        },
+                        "image": {
+                            "src": "img/github.svg",
+                            "width": 100,
+                            "height": 100
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.48927153781200905,
+                        "random": false,
+                        "anim": {
+                            "enable": true,
+                            "speed": 0.2,
+                            "opacity_min": 0,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 2,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 2,
+                            "size_min": 0,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": false,
+                        "distance": 150,
+                        "color": "#ffffff",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                    "enable": true,
+                    "speed": 0.2,
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "bubble"
+                    },
+                    "onclick": {
+                        "enable": false,
+                        "mode": "push"
+                    },
+                    "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 400,
+                            "line_linked": {
+                            "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 83.91608391608392,
+                            "size": 1,
+                            "duration": 3,
+                            "opacity": 1,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": false
+                });
         </script>
     </body>
 </html>

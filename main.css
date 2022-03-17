@@ -54,6 +54,7 @@ body {
     /* make navbar items in a row */
     display: flex;
     flex-direction: row;
+    z-index: 1030;
 }
 
 .navbar a {
@@ -123,12 +124,16 @@ body {
 
 .stars {
     height: 100%;
-    background: url('./images/stars.png') repeat top center;
+}
+
+.particles-js-canvas-el {
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: 0;
 }
 
 .main-content {
-    height: 90vh;
     flex: 1 1 auto;
     padding: 1rem;
     overflow-y: auto;
@@ -137,40 +142,70 @@ body {
     background: var(--gradient-transparent);
     margin-left: 10vw;
     margin-right: 10vw;
+    margin-bottom: 10vh;
     display: flex;
     flex-direction: column;
     border-radius: 0 0 1rem 1rem;
+    z-index: 100;
 }
 
 .text-center {
     text-align: center;
 }
 
-@keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
-}
-@-webkit-keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
-}
-@-moz-keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
-}
-@-ms-keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
+.hide {
+    display: none;
 }
 
-.twinkling {
-    height: 100%;
-    background: transparent url('./images/twinkling.png') repeat top center;
-    z-index: 1;
+.band-img {
+    width: 10vw;
+    transition: transform .5s;
+}
 
-    -moz-animation: move-twink-back 200s linear infinite;
-    -ms-animation: move-twink-back 200s linear infinite;
-    -o-animation: move-twink-back 200s linear infinite;
-    -webkit-animation: move-twink-back 200s linear infinite;
-    animation: move-twink-back 200s linear infinite;
+.band-img:hover {
+    transform: scale(1.1);
+}
+
+.form-control {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--highlight);
+    background-color: transparent;
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: .5rem;
+    margin-bottom: .5rem;
+    z-index: 999;
+}
+
+.btn {
+    border-radius: .25em;
+    border: none;
+    background-color: var(--highlight);
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: .5rem;
+    margin-bottom: .5rem;
+    z-index: 999;
+    transition: all .4s ease;
+}
+
+.btn:hover {
+    background-color: var(--dark);
+}
+
+
+/****************************************************************
+*   ALIGNMENTS
+****************************************************************/
+
+.mt-2 {
+    margin-top: 1rem;
+}
+
+.my-2 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
