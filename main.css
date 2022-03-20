@@ -3,11 +3,12 @@
 ****************************************************************/
 
 :root {
-    --dark: #0d0b16;
-    --dark-transparent: #0d0b16b6;
+    --bg: #0d0b16;
+    --bg-transparent: #0d0b16b6;
     --highlight: #996536;
     --white: #f5f3ea;
-
+    --text: #f5f3ea;
+    
     --gradient: linear-gradient(180deg, rgba(50,38,34,1) 0%, rgba(45,34,33,1) 27%, rgba(34,34,40,1) 67%, rgba(38,43,49,1) 100%);
     --gradient-transparent: linear-gradient(180deg, rgba(167,123,74,.25) 0%, rgba(165,104,56,.25) 27%, rgba(93,104,105,.25) 67%, rgba(119,145,135,.25) 100%);
 }
@@ -16,12 +17,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: background-color 0.5s ease-in-out;
 }
 
 /* FONT DEFINITIONS*/
 
-h1, h2, h3, h4, h5,
-.h1, .h2, .h3, .h4, .h5 {
+h1, h2 {
     text-transform: uppercase;
     font-family: 'Libre Baskerville', serif; 
     font-weight: bold;
@@ -38,14 +39,14 @@ body {
 
 #app {
     height: 100vh;
-    background-color: var(--dark);
+    background-color: var(--bg);
     color: var(--white);
     display: flex;
     flex-direction: column;
 }
 
 .navbar {
-    background-color: var(--dark-transparent);
+    background-color: var(--bg-transparent);
     border-bottom: 1px solid var(--highlight);
     border-radius: 0;
     margin-bottom: 0;
@@ -122,10 +123,6 @@ body {
 *   MAIN CONTENT
 ****************************************************************/
 
-.stars {
-    height: 100%;
-}
-
 .particles-js-canvas-el {
     position: absolute;
     top: 0;
@@ -134,19 +131,40 @@ body {
 }
 
 .main-content {
+    color: var(--text);
     flex: 1 1 auto;
     padding: 1rem;
     overflow-y: auto;
     overflow-x: hidden;
-    background: var(--dark);
+    background: var(--bg);
     background: var(--gradient-transparent);
     margin-left: 10vw;
     margin-right: 10vw;
-    margin-bottom: 10vh;
+    margin-bottom: 7vh;
     display: flex;
     flex-direction: column;
     border-radius: 0 0 1rem 1rem;
     z-index: 100;
+    font-size: 1.2em;
+}
+
+.main-content>h1 {
+    color: var(--highlight);
+}
+
+.footer {
+    background-color: var(--bg-transparent);
+    border-top: 1px solid var(--highlight);
+    padding-top: 1rem;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-bottom: 3vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1030;
+    font-size: 1.1em;
 }
 
 .text-center {
@@ -193,7 +211,7 @@ body {
 }
 
 .btn:hover {
-    background-color: var(--dark);
+    background-color: var(--bg);
 }
 
 
@@ -208,4 +226,8 @@ body {
 .my-2 {
     margin-top: 1rem;
     margin-bottom: 1rem;
+}
+
+.mr-2 {
+    margin-right: 1rem;
 }

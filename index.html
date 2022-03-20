@@ -10,6 +10,8 @@
         <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.png">
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <!-- Fontawesome -->
+        <script src="https://kit.fontawesome.com/89d3cac0f1.js" crossorigin="anonymous"></script>
         <!-- Particle JS -->
         <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
         <!-- Font Defs -->
@@ -24,7 +26,7 @@
             <!-- Navbar -->
             <nav class="navbar">
                 <div class="navbar-brand">
-                    <h2>LYFE</h2>
+                    <h2><i class="fa-solid fa-circle-notch"></i> LYFE</h2>
                 </div>
                 <ul class="nav">
                     <li class="nav-item">
@@ -36,6 +38,12 @@
                     <li class="nav-item">
                         <a class="nav-link" id="contact">Contact</a>
                     </li>
+                    <!-- Toggle light mode -->
+                    <li class="nav-item align-right">
+                        <a class="nav-link" id="toggle-mode">
+                            <i class="fa-solid fa-moon"></i>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!--[if lt IE 7]>
@@ -44,7 +52,7 @@
 
             <!-- Main Content -->
             <div class="main-content text-center" id="home-tab">
-                <h1>Welcome to LYFE</h1>
+                <h1><i class="fa-solid fa-seedling mr-2"></i>Welcome to LYFE</h1>
                 <hr class="mt-2" style="width: 50%; margin-left: auto; margin-right: auto; opacity: .5;" />
                 <p class="mt-2">
                     LYFE is an innovational product for the people who want to live a more sustainable, care-free, and easy lifestyle.
@@ -64,24 +72,12 @@
                         <br><br>You control what LYFE Band knows. 
                     </p>
                 </div>
-                <p>
+                <!--<p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Donec euismod, nisl eu aliquam consectetur, nisl nunc
                     consectetur nisi, euismod aliquam nisl nunc euismod
                     nisi.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Donec euismod, nisl eu aliquam consectetur, nisl nunc
-                    consectetur nisi, euismod aliquam nisl nunc euismod
-                    nisi.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Donec euismod, nisl eu aliquam consectetur, nisl nunc
-                    consectetur nisi, euismod aliquam nisl nunc euismod
-                    nisi.
-                </p>
+                </p>-->
             </div>
             <!-- About -->
             <div class="main-content text-center hide" id="about-tab">
@@ -105,41 +101,92 @@
                         <br>
                         <textarea class="form-control" placeholder="Message" rows="8" cols="50"></textarea>
                         <br>
-                        <button class="mt-2 btn" id="send">Send</button>
+                        <button class="mt-2 btn" id="send"><i class="fa-solid fa-square-envelope"></i> Send</button>
                     </div>
                     <div id="thanks" class="hide">
-                        <h2 class="text-center">Thank you for your message!</h2>
-                        <p class="text-center">We will get back to you as soon as possible!</p>
+                        <h2 class="text-center"><i class="fa-solid fa-envelope-circle-check"></i> We have received your message!</h2>
+                        <p class="text-center">We will get back to you as soon as possible.</p>
                         <br>
-                        <button class="btn" id="another">Send Another?</button>
+                        <button class="btn" id="another"><i class="fa-solid fa-square-pen"></i> Send Another?</button>
                     </div>
                 </p>
-            </div>    
+            </div> 
+            <div class="footer" id="footer">
+                <p>
+                    <i class="fa-solid fa-copyright"></i> <span id="date"></span> LYFE, Inc.
+                </p>
+                <br>
+                <small>This is DCU Student Coursework</small>
+            </div>
         </div>    
         <script>
             $(document).ready(function() {
+                var date = new Date();
+                var year = date.getFullYear();
+                $("#date").text(year);
+
+                let mode = 0;
+                let color = '#fffff';
+                $("#toggle-mode").click(function() {
+                    if (mode == 0) {
+                        // change icon to be sun
+                        $("#toggle-mode").fadeOut();
+                        // wait till icon is hidden
+                        setTimeout(function() {
+                            $("#toggle-mode").html('<i class="fa-solid fa-sun"></i>');
+                            $("#toggle-mode").fadeIn();
+                        }, 500);
+                        // change css variables
+                        $("body").css("--bg", "#c7c7c7");
+                        $("body").css("--text", "black");
+                        $("body").css("--bg-transparent", "#0d0b16d0");
+
+                        mode = 1;
+                    } else {
+                        // change icon to be moon
+                        $("#toggle-mode").fadeOut();
+                        setTimeout(function() {
+                            $("#toggle-mode").html('<i class="fa-solid fa-moon"></i>');
+                            $("#toggle-mode").fadeIn();
+                        }, 500);
+                        // change css variables
+                        $("body").css("--bg", "#0d0b16");
+                        $("body").css("--text", "#f5f3ea");
+                        $("body").css("--bg-transparent", "#0d0b16b6");
+
+                        mode = 0;
+                        
+                    }
+                });
+
                 $("#home").click(function(){
                     $("#about-tab").fadeOut();
                     $("#contact-tab").fadeOut();
+                    $("#footer").fadeOut();
                     
                     setTimeout(function() {
                         $("#home-tab").fadeIn();
+                        $("#footer").fadeIn();
                     }, 500);
                 });
                 $("#about").click(function(){
                     $("#home-tab").fadeOut();
                     $("#contact-tab").fadeOut();
+                    $("#footer").fadeOut();
 
                     setTimeout(function() {
                         $("#about-tab").fadeIn();
+                        $("#footer").fadeIn();
                     }, 500);
                 });
                 $("#contact").click(function() {
                     $("#home-tab").fadeOut();
                     $("#about-tab").fadeOut();
-                    // wait for fade out to finish
+                    $("#footer").fadeOut();
+
                     setTimeout(function() {
                         $("#contact-tab").fadeIn();
+                        $("#footer").fadeIn();
                     }, 500);
                 });
 
@@ -166,7 +213,10 @@
                 });
             });
 
-            /* Referenced: https://codepen.io/bob6664569/pen/rOzmve */
+            /* 
+             * Referenced: https://codepen.io/bob6664569/pen/rOzmve 
+             * Modified the code somewhat to remove on-click animation (affected the site interactivity) 
+            */
             particlesJS("app", {
                 "particles": {
                     "number": {
