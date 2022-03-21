@@ -44,6 +44,16 @@ b {
 ul {
     list-style: none;
 }
+li {
+    margin: .25em;
+}
+
+hr {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto; 
+    opacity: .5;
+}
 
 ::-webkit-scrollbar {
     width: 20px;
@@ -172,7 +182,25 @@ ul {
     font-size: 1.2em;
 }
 
+.bg-dark {
+    margin-top: 1em;
+    padding: 2em;
+    width: 50%;
+    margin-left: 25%;
+    border: 1px solid var(--highlight);
+    background-color: var(--bg);
+}
+
+.blue {
+    color: var(--blue-highlight);
+    padding-right: .5em;
+}
+
 .main-content h1 {
+    color: var(--highlight);
+}
+
+#about-tab h2 {
     color: var(--highlight);
 }
 
@@ -258,6 +286,10 @@ ul {
     margin-top: 1rem;
 }
 
+.mt-5 {
+    margin-top: 5rem;
+}
+
 .mb-2 {
     margin-bottom: 1rem;
 }
@@ -273,12 +305,18 @@ ul {
 
 .card {
     width: 25%;
+    min-height: 30vh;
     background-color: var(--bg);
     border-radius: .25rem;
     border: 1px solid var(--highlight);
     padding: 1rem;
     margin-bottom: 1rem;
     transition: all .4s ease;
+}
+
+.card:hover {
+    transform: scale(1.025);
+    box-shadow: 0 0 1rem var(--highlight);
 }
 
 .card-body {

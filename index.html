@@ -53,15 +53,15 @@
             <!-- Main Content -->
             <div class="main-content text-center" id="home-tab">
                 <h1><i class="fa-solid fa-seedling mr-2"></i>Welcome to <b>LYFE</b> <img class="small-band-img" src="./images/wristband.png"/></h1>
-                <hr class="mt-2 mb-2" style="width: 50%; margin-left: auto; margin-right: auto; opacity: .5;" />
+                <hr class="mt-2 mb-2"/>
                 <div class="text-center">
                     <p class="mb-2">
                         <b>LYFE</b> is an innovational product for the people who want to live a more sustainable, care-free, and easy lifestyle.
-                        <br>
+                        <br><br>
                         Our product is an alternative solution to the outdated method of keeping physical copies of important documents,
                         <br>
                         such as passports, birth certificates, vaccine certs, and other sensitive information that end users avail of often.
-                        <br>
+                        <br><br>
                         It isn’t convenient to carry around physical certificates in this modern age of technology,
                         <br>
                         and even less so when such a document is misplaced, lost, needs reprinting, or becomes outdated. 
@@ -77,25 +77,27 @@
                     <br style="margin-bottom: 2em;" />
                     
                     <h1>Affordable, Simple <i class="fa-solid fa-hand-holding-dollar"></i></h1>
-                    <hr class="mt-2 mb-2" style="width: 50%; margin-left: auto; margin-right: auto; opacity: .5;" />
+                    <hr class="mt-2 mb-2"/>
                     <p>
-                        <b>LYFE</b> looks after you.
+                        <h3><b>LYFE</b> looks after you.</h3>
                         <br>
                         With a team of skilled professionals,
-                        we are able to provide you with the most affordable and simple solution to keeping your important documents safe for as long as you need,
+                        we are able to provide you with the most affordable and simple solution
+                        <br>
+                        to keeping your important documents safe for as long as you need,
                         for as little as possible.
                     </p>
-                    <div class="content-center">
+                    <div class="content-center mt-2">
                         <div class="card mt-2">
                             <div class="card-body">
-                                <h3 class="card-title">
+                                <h3 class="card-title mb-2">
                                     <b>LYFE</b> Band is <b>$59.99</b>
                                 </h3>
-                                <p class="card-text mb-2">
+                                <p class="card-text mb-2 mt-2">
                                     <b>LYFE</b> Band is a small, comfortable and convenient wristband that includes an individual's custom added personal information.
                                 </p>
-                                <div class="text-center mt-2">
-                                    <a href="#" class="btn btn-primary">Buy Now</a>
+                                <div class="text-center mt-5">
+                                    <a href="#" class="btn btn-primary" id="buy">Buy Now</a>
                                 </div>
                             </div>
                         </div>
@@ -105,37 +107,55 @@
             <!-- About -->
             <div class="main-content text-center hide" id="about-tab">
                 <h1>About LYFE</h1>
-                <hr class="mt-2" style="width: 50%; margin-left: auto; margin-right: auto; opacity: .5;" />
+                <hr class="mt-2"/>
                 <p class="mt-2">
                     <b>LYFE</b> is an innovational product for the people who want to live a more sustainable, care-free, and easy lifestyle.
-                    <p class="mt-2">
-                        <h1 class="mb-2"><i class="fa-solid fa-user"></i> Tara Greenwood</h1>
-                            XYZ
-                    </p>
-                    <p class="mt-2">
-                        <h1 class="mb-2"><i class="fa-solid fa-user"></i> Raja Khan</h1>
-                        <ul>
-                            <li>
-                                Provided content for product description to be added to the website.
-                            </li>
-                            <li>
-                                Encouraged all group members to take part in the group project.
-                            </li>    
-                            <li>
-                                Arranged necessary meetings over zoom to work remotely                        
-                            </li>
-                        </ul>
-                    </p>
-                    <p class="mt-2">
-                        <h1><i class="fa-solid fa-user"></i> Tara Greenwood</h1>
-                            XYZ
-                    </p>
+                        <div class="bg-dark">
+                        <p>
+                            <h2 class="mb-2"><i class="fa-solid fa-user blue"></i> Tara Greenwood</h2>
+                            <ul>
+                                <li>
+                                    Made the website. (CSS, HTML, JQuery)
+                                </li>
+                                <li>
+                                    Made the images for the website.
+                                </li>
+                            </ul>
+                        </p>
+                        <hr class="mt-2"/>
+                        <p class="mt-2">
+                            <h2 class="mb-2"><i class="fa-solid fa-user blue"></i> Raja Khan</h2>
+                            <ul>
+                                <li>
+                                    Provided content for product description to be added to the website.
+                                </li>
+                                <li>
+                                    Encouraged all group members to take part in the group project.
+                                </li>    
+                                <li>
+                                    Arranged necessary meetings over zoom to work remotely.                     
+                                </li>
+                            </ul>
+                        </p>
+                        <hr class="mt-2"/>
+                        <p class="mt-2">
+                            <h2 class="mb-2"><i class="fa-solid fa-user blue"></i> Dan Martin</h2>
+                            <ul>
+                                <li>
+                                    Helped provide information for the product description by market research.
+                                </li>
+                                <li>
+                                    Helped come up with a price for our product.
+                                </li>    
+                            </ul>
+                        </p>
+                    </div>
                 </p>
             </div>
             <!-- Contact -->
             <div class="main-content text-center hide" id="contact-tab">
                 <h1>Contact</h1>
-                <hr class="mt-2" style="width: 50%; margin-left: auto; margin-right: auto; opacity: .5;" />
+                <hr class="mt-2"/>
                 <p class="mt-2">
                     <div id="contact-form">
                         <input type="text" class="form-control" placeholder="Name">
@@ -204,7 +224,14 @@
                     }
                 });
 
-                $("#home").click(function(){
+                $("#buy").click(function() {
+                    $("#buy").html("<i class='fa-solid fa-spinner fa-spin'></i>");
+                    setTimeout(function() {
+                        $("#buy").html("<i class='fa-solid fa-check'></i>");
+                    }, 1000);
+                });
+
+                $("#home").click(function() {
                     $("#about-tab").fadeOut();
                     $("#contact-tab").fadeOut();
                     $("#footer").fadeOut();
@@ -214,7 +241,7 @@
                         $("#footer").fadeIn();
                     }, 500);
                 });
-                $("#about").click(function(){
+                $("#about").click(function() {
                     $("#home-tab").fadeOut();
                     $("#contact-tab").fadeOut();
                     $("#footer").fadeOut();
